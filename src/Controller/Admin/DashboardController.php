@@ -11,6 +11,7 @@ use App\Entity\AnimauxPhotos;
 use App\Entity\Carrousel;
 use App\Entity\EnfantPhotos;
 use App\Entity\FamillePhotos;
+use App\Entity\Informations;
 use App\Entity\MariagePhoto;
 use App\Entity\PortfolioEvenement;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -49,5 +50,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Portfolio Enfants', 'fas fa-baby', EnfantPhotos::class);
         yield MenuItem::linkToCrud('Portfolio Evénements', 'fas fa-trophy', PortfolioEvenement::class);
         yield MenuItem::linkToCrud('Portfolio Animaux', 'fas fa-cat', AnimauxPhotos::class);
+        yield MenuItem::linkToCrud('Informations', 'fas fa-info', Informations::class);
     }
 }

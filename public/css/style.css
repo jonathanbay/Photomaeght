@@ -594,7 +594,7 @@ label i {
         
     }
     .btnForm:hover{
-        background-color:rgb(187, 13, 13);
+        background-color: #87683A;
         /* color: #fffae1; */
         color: var(--text-color);
         cursor: pointer;
@@ -614,12 +614,14 @@ label i {
         text-decoration: none;
     }
     .containerFooter p {
+        margin: auto 20px;
         font-size: 20px;
         /* color: rgba(0, 0, 0, 0.603);  */
         color: var(--text-color);
     }
     .containerFooter img {
         height: 100px;
+        margin: auto 20px;
     }
     /* *******************page portfolio de toutes les categories ****************** */
     .retour {

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Informations;
 use App\Entity\AnimauxPhotos;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,9 +23,11 @@ class PortfolioAnimauxController extends AbstractController
     {
 
         $animaux = $this->entityManager->getRepository(AnimauxPhotos::class)->findAll();
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
         return $this->render('portfolio_animaux/index.html.twig', [
             'photosAnimaux' => $animaux,
+            'information' => $informations,
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Informations;
 use App\Entity\MariagePhoto;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,10 +22,12 @@ class PortfolioMariageController extends AbstractController
     public function index(): Response
     {
         $mariage = $this->entityManager->getRepository(MariagePhoto::class)->findAll();
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
         
         return $this->render('portfolio_mariage/index.html.twig', [
 
             'photosMariage' => $mariage,
+            'information' => $informations,
         ]);
     }
 }

@@ -8,6 +8,7 @@ use App\Entity\AccueilEvenement;
 use App\Entity\AccueilFamille;
 use App\Entity\AccueilMariage;
 use App\Entity\Carrousel;
+use App\Entity\Informations;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,6 +32,8 @@ class AccueilController extends AbstractController
         $photoAccueilEnfant = $this->entityManager->getRepository(AccueilEnfant::class)->findByValide(1);
         $photoAccueilAnimal = $this->entityManager->getRepository(AccueilAnimal::class)->findByValide(1);
 
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
+
         return $this->render('accueil/index.html.twig', [
 
             'carrousel' => $photosCarrousel,
@@ -39,6 +42,7 @@ class AccueilController extends AbstractController
             'photoAccueilEvenement' => $photoAccueilEvenement,
             'photoAccueilEnfant' => $photoAccueilEnfant,
             'photoAccueilAnimal' => $photoAccueilAnimal,
+            'information' => $informations,
         ]);
     }
 }

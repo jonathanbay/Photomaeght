@@ -27,8 +27,10 @@
         </label>
         <div class="navbar">
             <div class="icones">
-                <a href="https://fr-fr.facebook.com/people/Photomaeght/100057668701223/"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="index.html#categorieContact"><i class="fa-solid fa-envelope-circle-check"></i></a>
+                {% for informations in information %}
+                    <a href="{{ informations.lien}}"><i class="fa-brands fa-facebook-f"></i></a>
+                {% endfor %}
+                <a href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope-circle-check"></i></a>
             </div>
             <div class="imgIntro">
                 <img src="{{ asset('images/logoPhotomaeght.png')}}" alt="logo">

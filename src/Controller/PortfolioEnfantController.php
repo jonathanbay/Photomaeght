@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\EnfantPhotos;
+use App\Entity\Informations;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,9 +23,11 @@ class PortfolioEnfantController extends AbstractController
     public function index(): Response
     {
         $enfant = $this->entityManager->getRepository(EnfantPhotos::class)->findAll();
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
         return $this->render('portfolio_enfant/index.html.twig', [
             'photosEnfant' => $enfant,
+            'information' => $informations,
         ]);
     }
 }
