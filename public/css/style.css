@@ -3,7 +3,6 @@
 
 :root {
     --bg-color: #3b3b3b;
-    /* --bg-color: #0D0D0D; */
     --text-color: #f1f1f1;
     --trait: #87683A;
     }
@@ -158,12 +157,12 @@ label i {
 .clique::after {
     content: "";
     position: absolute;
-    bottom: 10px;
-    left: 150px;
+    bottom: 20px;
+    left: 180px;
     width: 80px;
     height: 125px;
     transform: rotate(50deg);
-    background: url(public/images/arrow.png) no-repeat center;
+    background: url(../images/arrow.png) no-repeat center;
     object-fit: cover;
     z-index: 3;
 }
@@ -182,17 +181,6 @@ label i {
     padding: 20px;
     position: relative;
 }
-/* .swiper::before {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 475px;
-    height: 545px;
-    content: "";
-    border: 2px solid var(--trait);
-    transform: translate(-5px, -5px);
-    z-index: 5;
-} */
 
 .swiper-slide {
     text-align: center;
@@ -442,7 +430,8 @@ label i {
 }
 /* **************** parallaxe ************** */
 .parallaxe {
-    background: url(./images/parallaxe.jpg) no-repeat fixed 50% 60%;
+    background: url(../images/parallaxe.jpg) no-repeat fixed 50% 60%;
+    /* background-image:  {{asset('images/parallaxe.jpg')}}; */
     /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 60%; */
@@ -578,7 +567,7 @@ label i {
         border: none;
         width: 100%;
         padding: 15px 10px;
-        margin: 3px;
+        margin: 3px 10px;
         font-size: 18px;
         font-family: 'Roboto', sans-serif;
         border-radius: 8px;
@@ -598,15 +587,27 @@ label i {
         /* color: #fffae1; */
         color: var(--text-color);
         cursor: pointer;
-        transition: 0.3s ease-in-out;
+        transition: 0.5s ease-in-out;
     }   
+    /* ****************personnalisation message envoie réussi ************** */
+    .messageEnvoye {
+        background-color: #87683A;
+        color: #f1f1f1;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 5px;
+        width: 100%;
+
+    }
     /* *********************** footer *************** */
     .containerFooter {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-flow: row wrap;
-        height: 150px;
+        /* height: 150px; */
         /* background-color: rgba(244, 232, 212, 1); */
         background-color: var(--bg-color);
     }
@@ -622,6 +623,10 @@ label i {
     .containerFooter img {
         height: 100px;
         margin: auto 20px;
+    }
+    .containerFooter i {
+        color: #f1f1f1;
+        margin: auto 30px;
     }
     /* *******************page portfolio de toutes les categories ****************** */
     .retour {
@@ -675,7 +680,7 @@ label i {
 }
 
 .identiteService img {
-    width: 290px;
+    width: 400px;
     margin: 30px 60px;
 }
 .cadeauService img {
@@ -728,16 +733,22 @@ label i {
 
 
 /* ********************** responsive page d'accueil *************** */
-@media screen and (max-width: 1349px) {
-    .services {
-        height: 1200px;
-    }
-}
+
 @media screen and (max-width: 1335px) {
     .horaires::after {
         top: -100px;
         transform: rotate(10deg);
         right: -80px;
+    }
+    .clique::after {
+        bottom: 35px;
+        left: 160px;
+        transform: rotate(40deg);
+    }
+}
+@media screen and (max-width: 1319px) {
+    .services {
+        height: 1270px;
     }
 }
 @media screen and (max-width: 1300px) {
@@ -755,19 +766,29 @@ label i {
     .portfolio h3 {text-align: center;}
     .categorie:nth-child(1) {line-height: 1.7em;}
 }
+@media screen and (max-width: 1200px) {
+    .clique::after {
+        bottom: 35px;
+        left: 130px;
+        transform: rotate(40deg);
+    }
+}
 @media screen and (max-width: 1019px) {
     .icones a {display: none;}
     .imgIntro, .clique {margin-right: 150px;}
     .photo {margin: 10px auto;}
     .swiper {width: 800px; margin: auto;}
     .swiper::before {width: 780px;}
+    .clique::after {
+        bottom: 35px;
+        left: 150px;
+        transform: rotate(40deg);
+    }
 }
-@media screen and (max-width: 959px) {
-    .services {height: 1250px}
+@media screen and (max-width: 879px) {
+    .services {height: 1910px}
 }
-@media screen and (max-width: 959px) {
-    .services {height: 1780px}
-}
+
 @media screen and (max-width: 800px) {
     /* .icones a {display: none;} */
     .imgIntro, .clique {margin-right: 150px;}
@@ -789,6 +810,12 @@ label i {
     .horaires {
         width: 100%;
         margin: 20px 10px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .categorie:nth-child(1) {line-height: 1.2em;}
+    .portfolio {
+        grid-template-rows: 0px 300px 250px 350px 500px;
     }
 }
 @media screen and (max-width: 691px) {
@@ -836,21 +863,27 @@ label i {
    }
    .infos {font-size: 18px;}
 }
-@media screen and (max-width: 700px) {
-    .categorie:nth-child(1) {line-height: 1.2em;}
-    .portfolio {
-        grid-template-rows: 0px 300px 250px 350px 500px;
-    }
-}
 @media screen and (max-width: 505px) {
     .portfolio h3 {margin: 0;}
     .categorie:nth-child(1) {line-height: 1em; height:400px}
-    
+    .horaires{
+        border-top: 15px solid #CEBBA2;
+        border-right: 15px solid #CEBBA2;
+        border-bottom: 80px solid #CEBBA2;
+        border-left: 15px solid #CEBBA2;
+    }
+    .horaires p {
+        margin: auto 10px;
+    }
+    #carte {
+        width: 90%;
+    }
 }
 @media screen and (max-width: 467px) {
     label .iconesMenus {display: none;}
 }
-/* *************************responsive portfolio ************************ */
+/* *************************responsive portfolio ************************ */ 
+
 @media screen and (max-width: 550px) {
     .galerie img {width: 400px;}
 }

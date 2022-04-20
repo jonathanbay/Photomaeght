@@ -140,13 +140,14 @@
             {% endfor %}
         </div>
         <div class="formulaire">
-            <form>
-                <div><input class="inputContact" placeholder="Votre Nom"></div>
-                <div><input class="inputContact" placeholder="Votre email"></div>
-                <div><input class="inputContact" placeholder="Votre numéro de télephone"></div>
-                <div><textarea placeholder="Une question? une demande de renseignements? c'est par ici..."></textarea></div>
-                <div><button class="btnForm">envoyer</button></div>
-            </form>
+            {% for message in app.flashes('messageEnvoye') %}
+                <div class="messageEnvoye">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="form">
+                {{ form(form) }}
+            </div>
         </div> 
     </section>
 
